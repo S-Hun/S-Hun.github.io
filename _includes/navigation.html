@@ -3,3 +3,18 @@
 	<div class="links"><a href="{{ i.url }}">{{ i.text }}</a></div>
 {% endfor %}
 </ul>
+
+<style>
+	a{
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		transition: 0.5s;
+		transition-property: left right;
+		-webkit-text-decoration-color: transparent;
+	}
+	a:hover{
+		text-decoration-color: rgb(255, 255, 255);
+		transition: 0.5s;
+		transition-property: left right;
+	}
+</style>

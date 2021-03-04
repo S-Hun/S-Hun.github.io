@@ -14,14 +14,19 @@
 
 
 .header-panel.shadow-z-2 {
-    /* fallback for old browsers */
-    background: #1b272e;  
+
+    background: #0e0841d3;
     padding: 20px 0 15px 0;
     width: 100%;
     text-align: center;
 
     display: flex;
     align-items: center;
+}
+
+.header-panel.shadow-z-2::after{
+    background: url(https://cdn.pixabay.com/photo/2020/06/28/00/04/chicago-5347435_960_720.jpg);
+    
 }
 
 .full{ font-size: 16px; 

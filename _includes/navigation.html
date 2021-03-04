@@ -5,7 +5,7 @@
 	{% else %}
 	{% assign linkurl = i.url | prepend: site.baseurl %}
 	{% endif %}
-	<div class="links"><a href="{{ i.url }}">{{ i.text }}</a></div>
+	<div class="links"><a href="{{ linkurl }}">{{ i.text }}</a></div>
 {% endfor %}
 </ul>
 

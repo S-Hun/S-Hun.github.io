@@ -1,5 +1,10 @@
 <ul> 
 {% for i in site.data.urls %}
+	{% if i.url contains '://' %}
+	{% assign linkurl = i.url %}
+	{% else %}
+	{% assign linkurl = i.url | prepend: site.baseurl %}
+	{% endif %}
 	<div class="links"><a href="{{ i.url }}">{{ i.text }}</a></div>
 {% endfor %}
 </ul>

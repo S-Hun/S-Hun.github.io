@@ -5,6 +5,16 @@
 </ul>
 
 <style>
+
+	@font-face {
+		font-family: 'Spoqa Han Sans';
+		font-weight: 700;
+		src: 
+		url('assets/fonts/SpoqaHanSansRegular.woff2') format('woff2'),
+		url('assets/fonts/SpoqaHanSansRegular.woff') format('woff'),
+		url('assets/fonts/SpoqaHanSansRegular.ttf') format('truetype');
+	}
+
 	.header-panel.shadow-z-2{
 		background-image: linear-gradient(to bottom, #3a4347e1,  #242a2ce1), url("/static/img/nav-bg3.jpg");
 		background-size: cover;
@@ -17,6 +27,7 @@
 	}
 	
 	.logo-img{
+		image-rendering: -webkit-optimize-contrast;
 		transition: 0.5s;
 	}
 	.logo-img:hover{
@@ -24,7 +35,7 @@
 		transition: 0.5s;
 	}
 	.links > a{
-		font-family: 'Balsamiq Sans', cursive;
+		font-family:  'Spoqa Han Sans';
 		font-size:30px;
 		color:white;
 		text-decoration: underline;

@@ -5,9 +5,32 @@ title: Members
 
 <div class="well">
     <h1 style="text-align: center;"><b>Welcome to BML LAB</b></h1>
-    {% assign professor = site.data.sheets.people | where: "class", "Professor" %}
-    {{ professor }}
-    <!-- {% assign members = site.data.sheets.people | where: "class", "Members" %}
-    {{ members }} -->
+    {% assign professor = site.data.sheets.people | where: "class", "Professor" | first %}
+    <h1>Professor</h1><hr>
+    <div>
+      <div><img src="{{ professor.picture }}" alt="profile1"></div>
+      <div>{{ professor.name }}</div>
+      <div>{{ professor.description }}</div>
+      <div>{{ professor.address }}</div>
+      <div>{{ professor.call }}</div>
+      <div>{{ professor.email }}</div>
+    </div>
+    {% assign members = site.data.sheets.people | where: "class", "Members" | first %}
+    {% assign Groups = members.people | group_by: "type" %}
+    {% for Group in Groups %}
+    <div>
+      <h2>{{ Group.name }}</h2><hr>
+      <div>
+        {% for member in Group.items %}
+        <div style="width: 25%; height: 300px; float: left;">
+          <div><img src="{{ member.picture }}" alt="profile_pic"></div>
+          <div>{{ member.name }}</div>
+          <div>{{ member.email }}</div>
+          <div>{{ member.description }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
   </div>
   

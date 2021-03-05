@@ -1,6 +1,6 @@
 <ul> 
 {% for i in site.data.urls %}
-	<div class="links"><a href="{{ i.url }}">{{ i.text }}</a></div>
+	<div class="links"><a href="{{ site.baseurl }}{{ i.url }}">{{ i.text }}</a></div>
 {% endfor %}
 </ul>
 

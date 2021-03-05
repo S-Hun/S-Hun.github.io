@@ -1,0 +1,57 @@
+[
+    {
+        "class": "Professor",
+        "name": "Kyuri Jo",
+        "description": "Assistant professor at",
+        "address": "Chungdae-ro 1, Seowon-gu, Cheongju, Chungbuk, Korea (28644)",
+        "call": "+82-43-261-3685",
+        "email": "kyurijo@chungbuk.ac.kr"
+    },
+    {
+        "class": "Members",
+        "people": [
+            {
+                "type": "Members",
+                "picture": "",
+                "name": "Seonghun Kim",
+                "email": "tjdgns4560@naver.com",
+                "description": "Image processing"
+            },
+            {
+                "type": "Members",
+                "picture": "",
+                "name": "Jeonghwan Yoon",
+                "email": "ghks0630@naver.com",
+                "description": "Machine Learning"
+            },
+            {
+                "type": "Members",
+                "picture": "",
+                "name": "Seokhun Bae",
+                "email": "dinky24@chungbuk.ac.kr",
+                "description": "Bioinformatics"
+            },
+            {
+                "type": "Members",
+                "picture": "",
+                "name": "Jang Hyuksoon",
+                "email": "smashh712@gmail.com",
+                "description": "Machine Learning"
+            },
+            {
+                "type": "Members",
+                "picture": "",
+                "name": "You Jiwon",
+                "email": "jiwon71@g.cbnu.ac.kr",
+                "description": "Machine Learning"
+            },
+            {
+                "type": "Members",
+                "picture": "",
+                "name": "Park Jeongho",
+                "email": "yu065812@naver.com",
+                "description": "Machine Learning"
+            }
+        ]
+    }
+]

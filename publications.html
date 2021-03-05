@@ -4,14 +4,27 @@ title: Publications
 ---
 
 <div class="well">
-    {% for pub in site.data.sheets.pub %}
-    <div>
-        <span>{{ pub.authors | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" }}.</span>
-        <span>{{ pub.title }}.</span>
-        <span>{{ pub.journal }}.</span>
-        <span>{{ pub.date | date: "%Y %b %d"}}{% if pub.online != nil %} (online).{% endif %}</span>
-        <span>{% if pub.number != nil %}; {{ pub.number }}.{% endif %}</span>
-        <span>{{ pub.etc }}</span>
-    </div>
+    {% assign cGroup = site.data.sheets.pub | group_by: "class" %}
+    {% for class in cGroup %}
+        <h1>{{ class.name }}</h1>
+        <hr>
+            {% assign dGroup = class.items | group_by_exp: "item", "item.date | date: '%Y' " %}
+            {% for dates in dGroup %}
+            <h2>{{ dates.name }}</h2>
+                <ul>
+                {% for pub in dates.items %}
+                <li>
+                    <span>{{ pub.authors | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" }}</span>
+                    <span>{{ pub.title }}</span>
+                    <span>{{ pub.journal }}</span>
+                    <span>{{ pub.date | date: "%Y %b %d"}}{% if pub.online %} {{ pub.online }}{% endif %}</span>
+                    <span>{% if pub.number != nil %}{{ pub.number }}{% endif %}</span>
+                    <span>{{ pub.etc }}</span>
+                </li>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+        <hr>
+        <br>
     {% endfor %}
 </div>

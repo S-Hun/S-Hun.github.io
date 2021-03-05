@@ -5,6 +5,9 @@ title: Members
 
 <div class="well">
     <h1 style="text-align: center;"><b>Welcome to BML LAB</b></h1>
-    <br/>
+    {% assign professor = site.data.sheets.people | where: "class", "Professor" %}
+    {{ professor }}
+    <!-- {% assign members = site.data.sheets.people | where: "class", "Members" %}
+    {{ members }} -->
   </div>
   

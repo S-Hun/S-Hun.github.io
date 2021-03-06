@@ -2,6 +2,13 @@
 layout: default
 title: Members
 ---
+<style>
+  div.base::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+</style>
 
 <div class="well">
     <h1 style="text-align: center;"><b>Welcome to BML LAB</b></h1>
@@ -20,9 +27,9 @@ title: Members
     {% for Group in Groups %}
     <div>
       <h2>{{ Group.name }}</h2><hr>
-      <div>
+      <div class="base">
         {% for member in Group.items %}
-        <div style="width: 25%; height: 300px; float: left;">
+        <div style="width: 25%; height: 100%; padding: 10px 0; float: left;">
           <div><img src="{{ member.picture }}" alt="profile_pic"></div>
           <div>{{ member.name }}</div>
           <div>{{ member.email }}</div>
@@ -32,5 +39,6 @@ title: Members
       </div>
     </div>
     {% endfor %}
-  </div>
+    <div></div>
+</div>
   

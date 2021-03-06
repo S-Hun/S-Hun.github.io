@@ -13,17 +13,11 @@ title: Publications
             <h2>{{ dates.name }}</h2>
                 <ul>
                 {% for pub in dates.items %}
-                <li>
-                    <span>{{ pub.authors | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" }}</span>
-                    <span>{{ pub.title }}</span>
-                    <span>{{ pub.journal }}</span>
-                    <span>{{ pub.date | date: "%Y %b %d"}}{% if pub.online %} {{ pub.online }}{% endif %}</span>
-                    <span>{% if pub.number != nil %}{{ pub.number }}{% endif %}</span>
-                    <span>{{ pub.etc }}</span>
-                </li>
+                    <li>{{ pub.contents | replace: "?", " " | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" }}</li>
                 {% endfor %}
                 </ul>
             {% endfor %}
+        {% if class.name == "International Journals" %}<p>*: Equal contributors</p>{% endif %}
         <hr>
         <br>
     {% endfor %}

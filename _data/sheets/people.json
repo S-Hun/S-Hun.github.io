@@ -1,7 +1,7 @@
 [
     {
         "class": "Professor",
-        "picture": "",
+        "picture": "https://kyurijo.github.io/images/KyuriJo_round.png",
         "name": "Kyuri Jo",
         "description": "Assistant professor at",
         "address": "Chungdae-ro 1, Seowon-gu, Cheongju, Chungbuk, Korea (28644)",
@@ -13,59 +13,45 @@
         "people": [
             {
                 "type": "Members",
-                "picture": "",
+                "picture": "/static/img/sh1.jpg",
                 "name": "Seonghun Kim",
                 "email": "tjdgns4560@naver.com",
                 "description": "Image processing"
             },
             {
                 "type": "Members",
-                "picture": "",
+                "picture": "/static/img/jh.jpg",
                 "name": "Jeonghwan Yoon",
                 "email": "ghks0630@naver.com",
                 "description": "Machine Learning"
             },
             {
                 "type": "Members",
-                "picture": "",
+                "picture": "/static/img/sh.jpg",
                 "name": "Seokhun Bae",
                 "email": "dinky24@chungbuk.ac.kr",
                 "description": "Bioinformatics"
             },
             {
                 "type": "Members",
-                "picture": "",
+                "picture": "/static/img/hs.jpg",
                 "name": "Jang Hyuksoon",
                 "email": "smashh712@gmail.com",
                 "description": "Machine Learning"
             },
             {
                 "type": "Members",
-                "picture": "",
+                "picture": "/static/img/jw.jpg",
                 "name": "You Jiwon",
                 "email": "jiwon71@g.cbnu.ac.kr",
                 "description": "Machine Learning"
             },
             {
                 "type": "Members",
-                "picture": "",
+                "picture": "/static/img/jh1.jpg",
                 "name": "Park Jeongho",
                 "email": "yu065812@naver.com",
                 "description": "Machine Learning"
-            },
-            {
-                "type": "PostDocs",
-                "picture": "",
-                "name": "Ko",
-                "email": "bs@naver.com",
-                "description": "sssshh"
-            },
-            {
-                "type": "PostDocs",
-                "picture": "",
-                "name": "Ko",
-                "email": "bs@naver.com",
-                "description": "sssshh"
             }
         ]
     }

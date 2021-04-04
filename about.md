@@ -5,7 +5,7 @@ permalink: /about/
 ---
 <br>
 <br>
-<img src="/static/img/about2.png" style="display: block; margin: 0px auto;
+<img src="{{site.baseurl}}/static/img/about2.png" style="display: block; margin: 0px auto;
     width: auto; height: auto;
     min-width: 300px;
     min-height: 300px;">

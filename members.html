@@ -55,7 +55,7 @@ permalink: /members/
       <div class="base">
         {% for member in Group.items %}
         <div style="width: 25%; height: 100%; padding: 10px 0; float: left;">
-          <div class="text-center"><img src="{{ member.picture }}" alt="profile_pic" style="display: block; margin: 0px auto;"></div>
+          <div class="text-center"><img src="{{site.baseurl}}{{ member.picture }}" alt="profile_pic" style="display: block; margin: 0px auto;"></div>
           <div class="text-center" style=" font-size:1.3em; text-align: center; margin-top:3px" >{{ member.name }}</div>
           <div class="text-center" style=" font-size:0.9em;">{{ member.email }}</div>
           <div class="text-center"></div>

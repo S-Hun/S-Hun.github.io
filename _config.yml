@@ -5,8 +5,8 @@ logo: /static/img/logo.png
 github: https://github.com/s-hun
 about: Bioinformatics Machine Learning
 
-baseurl: ""
-url: "" #"https://s-hun.github.io/hcz-jekyll-blog"
+baseurl: "https://s-hun.github.io/hcz-jekyll-blog"
+url: "https://s-hun.github.io/hcz-jekyll-blog"
 
 # allowsearch: true
 allowsearch : false

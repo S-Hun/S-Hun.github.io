@@ -11,17 +11,22 @@ permalink: /publications/
         <hr>
             {% assign dGroup = class.items | group_by_exp: "item", "item.date | date: '%Y' " %}
             {% for dates in dGroup %}
-            <h2>{{ dates.name }}</h2>
+            <div style="display:inline; color:rgb(104, 104, 104);background-color: rgba(8, 41, 68, 0);
+            padding: 1px 5px ; font-weight: 400;
+            border-radius:3px; font-size:1.2em;">{{ dates.name }}</div>
+            <div style="margin-bottom:13px;"></div>
                 <ul>
                 {% for pub in dates.items %}
                     {% assign items =  pub.contents | replace: "?", " " | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" | split: ". " %}
                     <div style="margin-bottom: 10px;">
                     {% if items.size > 1 %}
-                        <div>{{ items[1] }}.</div>
-                        <div>{{ items[0] }}.</div>
-                        <div>{% for item in items offset:2 %}{{ item | replace: ".", "" }}. {% endfor %}</div>
+                        <div style="font-size:1.1em; font-weight: 400; margin-bottom:5px;">
+                            <inline style="background-color: rgba(22, 30, 97, 0.521); border-radius:3px;">&nbsp</inline> {{ items[1] }}.</div>
+                        <div style="font-size:0.9em; font-weight: 350; margin-left:9px;">{{ items[0] }}.</div>
+                        <div style="font-size:0.8em; font-style: italic; margin-bottom:20px;margin-left:9px;">{% for item in items offset:2 %}{{ item | replace: ".", "" }}. {% endfor %}</div>
                     {% else %}
-                        {{ items }}
+                            
+                            <div style="font-size:1.1em; font-weight: 400; margin-bottom:5px;"><inline style="background-color: rgba(22, 30, 97, 0.521); border-radius:3px;">&nbsp</inline> {{ items }}</div>
                         <!-- {% assign items = items | split: ", " %}
                         <div>{{ items[0] }}</div>
                         <div>{{ items[1] }}</div> -->

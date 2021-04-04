@@ -4,11 +4,15 @@ title: News
 permalink: /news/
 ---
 <div class="well">
-    {% for post in site.categories['others'] %}
-    <div>
-      {% assign YMD = post.date | split: " " %}
-      <a href="{{ site.url }}{{ post.url }}">{{ YMD[0] }} {{post.title}}</a>
-    </div>
+    {% assign classes = site.categories['others'] | group_by_exp: "item", "item.date | date: '%Y'"%}
+    {% for class in classes %}
+      <h2>{{ class.name }}</h2><br>
+      {% for post in class.items %}
+        <div>
+          {% assign YMD = post.date | split: " " %}
+          <a href="{{ site.url }}{{ post.url }}">{{ YMD[0] }} {{post.title}}</a>
+        </div>
+      {% endfor %}
     {% endfor %}
     <div class="list-group">
       {% for post in paginator.posts %}

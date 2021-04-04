@@ -5,14 +5,33 @@ permalink: /publications/
 ---
 
 <div class="well">
-    {% for pub in site.data.sheets.pub %}
-    <div>
-        <span>{{ pub.authors | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" }}.</span>
-        <span>{{ pub.title }}.</span>
-        <span>{{ pub.journal }}.</span>
-        <span>{{ pub.date | date: "%Y %b %d"}}{% if pub.online != nil %} (online).{% endif %}</span>
-        <span>{% if pub.number != nil %}; {{ pub.number }}.{% endif %}</span>
-        <span>{{ pub.etc }}</span>
-    </div>
+    {% assign cGroup = site.data.sheets.pub | group_by: "class" %}
+    {% for class in cGroup %}
+        <h1>{{ class.name }}</h1>
+        <hr>
+            {% assign dGroup = class.items | group_by_exp: "item", "item.date | date: '%Y' " %}
+            {% for dates in dGroup %}
+            <h2>{{ dates.name }}</h2>
+                <ul>
+                {% for pub in dates.items %}
+                    {% assign items =  pub.contents | replace: "?", " " | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" | split: ". " %}
+                    <div style="margin-bottom: 10px;">
+                    {% if items.size > 1 %}
+                        <div>{{ items[1] }}.</div>
+                        <div>{{ items[0] }}.</div>
+                        <div>{% for item in items offset:2 %}{{ item | replace: ".", "" }}. {% endfor %}</div>
+                    {% else %}
+                        {{ items }}
+                        <!-- {% assign items = items | split: ", " %}
+                        <div>{{ items[0] }}</div>
+                        <div>{{ items[1] }}</div> -->
+                    {% endif %}
+                    </div>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+        {% if class.name == "International Journals" %}<p>*: Equal contributors</p>{% endif %}
+        <hr>
+        <br>
     {% endfor %}
 </div>

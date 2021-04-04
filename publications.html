@@ -13,7 +13,19 @@ title: Publications
             <h2>{{ dates.name }}</h2>
                 <ul>
                 {% for pub in dates.items %}
-                    <li>{{ pub.contents | replace: "?", " " | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" }}</li>
+                    {% assign items =  pub.contents | replace: "?", " " | replace: "Jo K", "<b>Jo K</b>" | replace: "조겨리", "<b>조겨리</b>" | split: ". " %}
+                    <div style="margin-bottom: 10px;">
+                    {% if items.size > 1 %}
+                        <div>{{ items[1] }}.</div>
+                        <div>{{ items[0] }}.</div>
+                        <div>{% for item in items offset:2 %}{{ item | replace: ".", "" }}. {% endfor %}</div>
+                    {% else %}
+                        {{ items }}
+                        <!-- {% assign items = items | split: ", " %}
+                        <div>{{ items[0] }}</div>
+                        <div>{{ items[1] }}</div> -->
+                    {% endif %}
+                    </div>
                 {% endfor %}
                 </ul>
             {% endfor %}

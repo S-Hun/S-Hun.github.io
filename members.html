@@ -11,31 +11,57 @@ permalink: /members/
   }
 </style>
 
-<div class="well">
-    <h1 style="text-align: center;"><b>Welcome to BML LAB</b></h1>
+<div class="well" >
     {% assign professor = site.data.sheets.people | where: "class", "Professor" | first %}
     <h1>Professor</h1><hr>
-    <div>
-      <div><img src="{{ professor.picture }}" alt="profile1"></div>
-      <div>{{ professor.name }}</div>
-      <div>{{ professor.description }}</div>
-      <div>{{ professor.address }}</div>
-      <div>{{ professor.call }}</div>
-      <div>{{ professor.email }}</div>
+
+    <div class="row" style="margin-bottom:70px">
+
+      
+      <div class="col-md-3"><img src="{{ professor.picture }}" alt="profile1"></div>
+      <div class="col-md-6">
+        <h2 style="font-weight: bold; font-size:2.0em;">{{ professor.name }}</h2>
+        <div>{{ professor.email }}</div>
+        <br>
+        <div>{{ professor.description }} <a href="http://computer.chungbuk.ac.kr" target="_blank">Chungbuk National University</a> </div>
+        <br>
+        <div>{{ professor.department }}</div>
+        <br>
+        <div><i class="fa fa-comments"></i> {{ professor.address }}</div>
+        <div><i class="fa fa-phone"></i> {{ professor.call }}</div>
+        <!-- <button type="button" class="btn btn-raised btn-sm">Small button</button> -->
+        <a href="https://kyurijo.github.io/" class="btn btn-raised btn-primary btn-sm" 
+          style="background-color:rgba(15, 60, 145, 0.541)" target="_blank">homepage</a>
+          
+        <a  href="mailto:{{ professor.email }}" class="btn btn-raised btn-primary btn-sm" 
+          style="background-color:rgba(15, 60, 145, 0.541)" target="_blank">e-mail</a>
+
+      </div>
     </div>
+    <div></div>
+
+    <div>
+
+    </div>
+
+
+    
     {% assign members = site.data.sheets.people | where: "class", "Members" | first %}
     {% assign Groups = members.people | group_by: "type" %}
     {% for Group in Groups %}
+    
     <div>
       <h2>{{ Group.name }}</h2><hr>
       <div class="base">
         {% for member in Group.items %}
         <div style="width: 25%; height: 100%; padding: 10px 0; float: left;">
-          <div><img src="{{ member.picture }}" alt="profile_pic"></div>
-          <div>{{ member.name }}</div>
-          <div>{{ member.email }}</div>
-          <div>{{ member.description }}</div>
+          <div class="text-center"><img src="{{ member.picture }}" alt="profile_pic" style="display: block; margin: 0px auto;"></div>
+          <div class="text-center" style=" font-size:1.3em; text-align: center; margin-top:3px" >{{ member.name }}</div>
+          <div class="text-center" style=" font-size:0.9em;">{{ member.email }}</div>
+          <div class="text-center"></div>
+          <div class="text-center" style="margin-top:10px">{{ member.description }}</div>
         </div>
+        
         {% endfor %}
       </div>
     </div>

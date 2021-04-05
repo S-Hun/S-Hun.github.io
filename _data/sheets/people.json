@@ -14,6 +14,13 @@
         "people": [
             {
                 "type": "Members",
+                "picture": "/static/img/hs.jpg",
+                "name": "Jang Hyuksoon",
+                "email": "smashh712@gmail.com",
+                "description": "Machine Learning"
+            },
+            {
+                "type": "Members",
                 "picture": "/static/img/sh1.jpg",
                 "name": "Seonghun Kim",
                 "email": "tjdgns4560@naver.com",
@@ -29,16 +36,9 @@
             {
                 "type": "Members",
                 "picture": "/static/img/sh.jpg",
-                "name": "Seokhun Bae",
+                "name": "Seockhun Bae",
                 "email": "dinky24@chungbuk.ac.kr",
                 "description": "Bioinformatics"
-            },
-            {
-                "type": "Members",
-                "picture": "/static/img/hs.jpg",
-                "name": "Jang Hyuksoon",
-                "email": "smashh712@gmail.com",
-                "description": "Machine Learning"
             },
             {
                 "type": "Members",
